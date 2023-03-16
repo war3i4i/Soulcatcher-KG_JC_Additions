@@ -35,7 +35,7 @@ public partial class Soulcatcher : BaseUnityPlugin
             SerializeNullValues = false,
             DateTimeMilliseconds = false,
             UseUTCDateTime = true,
-            UseOptimizedDatasetSchema = true,
+            UseOptimizedDatasetSchema = true, 
             UseValuesOfEnums = true
         };
         CalculateHash();
