@@ -1,0 +1,404 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{2ED4D3E3-D23D-4E36-92E6-C2303E7843E8}</ProjectGuid>
+        <OutputType>Library</OutputType>
+        <AppDesignerFolder>Properties</AppDesignerFolder>
+        <RootNamespace>Soulcatcher_KG_JC_Additions</RootNamespace>
+        <AssemblyName>Soulcatcher_KG_JC_Additions</AssemblyName>
+        <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+        <FileAlignment>512</FileAlignment>
+        <LangVersion>10</LangVersion>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>1</WarningLevel>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants> 
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>1</WarningLevel>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>   
+    </PropertyGroup>
+    <Target Name="Copy" AfterTargets="ILRepack">
+        <Exec Command="copy /Y &quot;$(TargetDir)$(AssemblyName).dll&quot; &quot;D:\SteamLibrary\steamapps\common\Valheim\BepInEx\plugins\$(AssemblyName).dll&quot;" />
+    </Target>
+    <ItemGroup>
+        <Reference Include="0Harmony">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\0Harmony.dll</HintPath>
+        </Reference>
+        <Reference Include="assembly_googleanalytics">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\assembly_googleanalytics.dll</HintPath>
+        </Reference>
+        <Reference Include="assembly_guiutils">
+          <HintPath>..\MagicHeim\MagicHeim\Libs\assembly_guiutils_publicized.dll</HintPath>
+        </Reference>
+        <Reference Include="assembly_postprocessing">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\assembly_postprocessing.dll</HintPath>
+        </Reference>
+        <Reference Include="assembly_steamworks">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\assembly_steamworks.dll</HintPath>
+        </Reference>
+        <Reference Include="assembly_sunshafts">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\assembly_sunshafts.dll</HintPath>
+        </Reference>
+        <Reference Include="assembly_utils">
+          <HintPath>..\MagicHeim\MagicHeim\Libs\assembly_utils_publicized.dll</HintPath>
+        </Reference>
+        <Reference Include="assembly_valheim">
+          <HintPath>..\MagicHeim\MagicHeim\Libs\assembly_valheim_publicized.dll</HintPath>
+        </Reference>
+        <Reference Include="BepInEx">
+          <HintPath>D:\SteamLibrary\steamapps\common\Valheim\BepInEx\core\BepInEx.dll</HintPath>
+        </Reference>
+        <Reference Include="fastJSON">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\fastJSON.dll</HintPath>
+        </Reference>
+        <Reference Include="ItemDataManager">
+          <HintPath>libs\ItemDataManager.dll</HintPath>
+        </Reference>
+        <Reference Include="ItemManager">
+          <HintPath>libs\ItemManager.dll</HintPath>
+        </Reference>
+        <Reference Include="Jewelcrafting">
+          <HintPath>libs\Jewelcrafting.dll</HintPath>
+        </Reference>
+        <Reference Include="LocalizationManager">
+          <HintPath>libs\LocalizationManager.dll</HintPath>
+        </Reference>
+        <Reference Include="Mono.Cecil">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\Mono.Cecil.dll</HintPath>
+        </Reference>
+        <Reference Include="MonoMod.RuntimeDetour">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\MonoMod.RuntimeDetour.dll</HintPath>
+        </Reference>
+        <Reference Include="MonoMod.Utils">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\MonoMod.Utils.dll</HintPath>
+        </Reference>
+        <Reference Include="mscorlib">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\mscorlib.dll</HintPath>
+        </Reference>
+        <Reference Include="netstandard">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\netstandard.dll</HintPath>
+        </Reference>
+        <Reference Include="ServerSync">
+          <HintPath>libs\ServerSync.dll</HintPath>
+        </Reference>
+        <Reference Include="SkillManager">
+          <HintPath>libs\SkillManager.dll</HintPath>
+        </Reference>
+        <Reference Include="SoulcatcherScripts">
+          <HintPath>libs\SoulcatcherScripts.dll</HintPath>
+        </Reference>
+        <Reference Include="System" />
+        <Reference Include="System.Collections.Immutable, Version=1.2.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <HintPath>packages\System.Collections.Immutable.1.5.0\lib\netstandard2.0\System.Collections.Immutable.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Configuration">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\System.Configuration.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Core" />
+        <Reference Include="System.Data" />
+        <Reference Include="System.Numerics">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\System.Numerics.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <HintPath>packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Security">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\System.Security.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Xaml" />
+        <Reference Include="System.Xml" />
+        <Reference Include="UnityEngine">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.AccessibilityModule">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.AccessibilityModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.AIModule">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.AIModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.AndroidJNIModule">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.AndroidJNIModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.AnimationModule">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.AnimationModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.AssetBundleModule">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.AssetBundleModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.AudioModule">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.AudioModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.ClothModule">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.ClothModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.ClusterInputModule">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.ClusterInputModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.ClusterRendererModule">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.ClusterRendererModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.CoreModule">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.CoreModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.CrashReportingModule">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.CrashReportingModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.DirectorModule">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.DirectorModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.DSPGraphModule">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.DSPGraphModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.GameCenterModule">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.GameCenterModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.GridModule">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.GridModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.ImageConversionModule">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.ImageConversionModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.IMGUIModule">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.IMGUIModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.InputLegacyModule">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.InputLegacyModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.InputModule">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.InputModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.JSONSerializeModule">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.JSONSerializeModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.LocalizationModule">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.LocalizationModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.ParticleSystemModule">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.ParticleSystemModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.PerformanceReportingModule">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.PerformanceReportingModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.Physics2DModule">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.Physics2DModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.PhysicsModule">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.PhysicsModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.ScreenCaptureModule">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.ScreenCaptureModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.SharedInternalsModule">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.SharedInternalsModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.SpriteMaskModule">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.SpriteMaskModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.SpriteShapeModule">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.SpriteShapeModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.StreamingModule">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.StreamingModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.SubsystemsModule">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.SubsystemsModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.TerrainModule">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.TerrainModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.TerrainPhysicsModule">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.TerrainPhysicsModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.TextCoreModule">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.TextCoreModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.TextRenderingModule">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.TextRenderingModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.TilemapModule">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.TilemapModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.TLSModule">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.TLSModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UI">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.UI.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UIElementsModule">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.UIElementsModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UIElementsNativeModule">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.UIElementsNativeModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UIModule">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.UIModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UNETModule">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.UNETModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UnityAnalyticsModule">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.UnityAnalyticsModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UnityConnectModule">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.UnityConnectModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UnityCurlModule">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.UnityCurlModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UnityWebRequestAssetBundleModule">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UnityWebRequestAudioModule">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UnityWebRequestModule">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.UnityWebRequestModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UnityWebRequestTextureModule">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UnityWebRequestWWWModule">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.VehiclesModule">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.VehiclesModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.VFXModule">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.VFXModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.VideoModule">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.VideoModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.VirtualTexturingModule">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.VirtualTexturingModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.VRModule">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.VRModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.WindModule">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.WindModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.XRModule">
+          <HintPath>D:\Project\MarketplaceRevamp\bin\Release\UnityEngine.XRModule.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="AddRecipes.cs" />
+        <Compile Include="AudioManager.cs" />
+        <Compile Include="Base64.cs" />
+        <Compile Include="CharacterDeathHook.cs" />
+        <Compile Include="CheatCommands.cs" />
+        <Compile Include="GemPowers\AbominationGem.cs" />
+        <Compile Include="GemPowers\DvergerBloodMageGem.cs" />
+        <Compile Include="GemPowers\DvergerFireMageGem.cs" />
+        <Compile Include="GemPowers\DvergerGem.cs" />
+        <Compile Include="GemPowers\DvergerIceMageGem.cs" />
+        <Compile Include="GemPowers\GEM_VFX.cs" />
+        <Compile Include="GemPowers\GjallGem.cs" />
+        <Compile Include="GemPowers\GoblinBruteGem.cs" />
+        <Compile Include="GemPowers\GoblinShamanGem.cs" />
+        <Compile Include="GemPowers\GreydwarfBruteGem.cs" />
+        <Compile Include="GemPowers\GreydwarfShamanGem.cs" />
+        <Compile Include="GemPowers\HareGem.cs" />
+        <Compile Include="GemPowers\LeechGem.cs" />
+        <Compile Include="GemPowers\SeekerBruteGem.cs" />
+        <Compile Include="GemPowers\SeekerGem.cs" />
+        <Compile Include="GemPowers\TarBlobGem.cs" />
+        <Compile Include="GemPowers\TheQueen.cs" />
+        <Compile Include="GemPowers\TickGem.cs" />
+        <Compile Include="GemPowers\UlvGem.cs" />
+        <Compile Include="GlobalUsings.cs" />
+        <Compile Include="Jewelry.cs" />
+        <Compile Include="SoulPlatform.cs" />
+        <Compile Include="SoulSpawnCustom.cs" />
+        <Compile Include="Gem.cs" />
+        <Compile Include="GemPowers\BatGem.cs" />
+        <Compile Include="GemPowers\BlobGem.cs" />
+        <Compile Include="GemPowers\BoarGem.cs" />
+        <Compile Include="GemPowers\BonemassGem.cs" />
+        <Compile Include="GemPowers\CultistGem.cs" />
+        <Compile Include="GemPowers\DeathsquitoGem.cs" />
+        <Compile Include="GemPowers\DeerGem.cs" />
+        <Compile Include="GemPowers\DraugrGem.cs" />
+        <Compile Include="GemPowers\EikthyrGem.cs" />
+        <Compile Include="GemPowers\ElderGem.cs" />
+        <Compile Include="GemPowers\FenringGem.cs" />
+        <Compile Include="GemPowers\GoblinGem.cs" />
+        <Compile Include="GemPowers\GreydwarfGem.cs" />
+        <Compile Include="GemPowers\HatchlingGem.cs" />
+        <Compile Include="GemPowers\LoxGem.cs" />
+        <Compile Include="GemPowers\ModerGem.cs" />
+        <Compile Include="GemPowers\NeckGem.cs" />
+        <Compile Include="GemPowers\SerpentGem.cs" />
+        <Compile Include="GemPowers\SkeletonGem.cs" />
+        <Compile Include="GemPowers\StoneGolemGem.cs" />
+        <Compile Include="GemPowers\SurtlingGem.cs" />
+        <Compile Include="GemPowers\TrollGem.cs" />
+        <Compile Include="GemPowers\WolfGem.cs" />
+        <Compile Include="GemPowers\WraithGem.cs" />
+        <Compile Include="GemPowers\YagluthGem.cs" />
+        <Compile Include="HashValidation.cs" />
+        <Compile Include="Lantern.cs" />
+        <Compile Include="LanternCombinatorUI.cs" />
+        <Compile Include="PrefabPhotoManager.cs" />
+        <Compile Include="PreventPossibleErrors.cs" />
+        <Compile Include="Soul.cs" />
+        <Compile Include="SoulAltar.cs" />
+        <Compile Include="SoulAltarUI.cs" />
+        <Compile Include="Soulcatcher.cs" />
+        <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="SoulcatcherSkill.cs" />
+        <Compile Include="SpecialValhallaItem.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <EmbeddedResource Include="libs\soulcatcher" />
+    </ItemGroup>
+    <ItemGroup>
+      <EmbeddedResource Include="libs\SoulcatcherScripts.dll" />
+    </ItemGroup>
+    <ItemGroup>
+      <None Include="App.config" />
+      <None Include="packages.config" />
+    </ItemGroup>
+    <ItemGroup>
+      <EmbeddedResource Include="translations\English.yml" />
+    </ItemGroup>
+    <ItemGroup>
+      <EmbeddedResource Include="icons\icon.png" />
+      <Content Include="ILRepack.targets" />
+      <Content Include="ThunderstorePackage\manifest.json" />
+      <Content Include="ThunderstorePackage\README.md" />
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+    <Import Project="packages\ILRepack.Lib.MSBuild.Task.2.0.18.2\build\ILRepack.Lib.MSBuild.Task.targets" Condition="Exists('packages\ILRepack.Lib.MSBuild.Task.2.0.18.2\build\ILRepack.Lib.MSBuild.Task.targets')" />
+    <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+      <PropertyGroup>
+        <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105.The missing file is {0}.</ErrorText>
+      </PropertyGroup>
+      <Error Condition="!Exists('packages\ILRepack.Lib.MSBuild.Task.2.0.18.2\build\ILRepack.Lib.MSBuild.Task.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\ILRepack.Lib.MSBuild.Task.2.0.18.2\build\ILRepack.Lib.MSBuild.Task.targets'))" />
+    </Target>
+    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+
+</Project>

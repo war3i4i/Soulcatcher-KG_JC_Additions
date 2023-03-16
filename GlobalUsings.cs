@@ -1,0 +1,29 @@
+﻿// Global using directives
+
+global using System;
+global using System.Collections;
+global using System.Collections.Generic;
+global using System.Diagnostics;
+global using System.Diagnostics.CodeAnalysis;
+global using System.IO;
+global using System.IO.Compression;
+global using System.Linq;
+global using System.Reflection;
+global using System.Reflection.Emit;
+global using System.Runtime.InteropServices;
+global using System.Security.Cryptography;
+global using System.Text;
+global using System.Threading.Tasks;
+global using BepInEx;
+global using BepInEx.Bootstrap;
+global using BepInEx.Configuration;
+global using fastJSON;
+global using HarmonyLib;
+global using ItemManager;
+global using Jewelcrafting;
+global using LocalizationManager;
+global using MonoMod.Utils;
+global using ServerSync;
+global using SkillManager;
+global using UnityEngine;
+global using UnityEngine.UI;
