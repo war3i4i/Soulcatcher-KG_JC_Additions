@@ -16,6 +16,8 @@ public partial class Soulcatcher
     {
         Lantern = asset.LoadAsset<GameObject>("LanternSoulcatcher");
         Lantern.GetComponent<ItemDrop>().m_itemData.m_shared.m_itemType = ItemDrop.ItemData.ItemType.Shield;
+        Lantern.GetComponent<ItemDrop>().m_itemData.m_shared.m_attachOverride = ItemDrop.ItemData.ItemType.None;
+        Lantern.GetComponent<ItemDrop>().m_itemData.m_shared.m_animationState = ItemDrop.ItemData.AnimationState.Shield;
         Lantern.GetComponent<ItemDrop>().m_itemData.Data().Add<LanternComponent>();
         OnSoulGain += CaptureSoul;
         OnLanternEffectUpdate += UpdateLanternEffect;

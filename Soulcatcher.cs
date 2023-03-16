@@ -10,7 +10,7 @@ public partial class Soulcatcher : BaseUnityPlugin
 {
     private const string GUID = "Soulcatcher";
     private const string PluginName = "Soulcatcher"; 
-    private const string PluginVersion = "4.4.0"; 
+    private const string PluginVersion = "4.4.1"; 
     private static AssetBundle asset;
     private static Soulcatcher _thistype;
     private static readonly string ConfigFileName = GUID + ".cfg";
