@@ -99,7 +99,7 @@ public partial class Soulcatcher
             static void Postfix(Humanoid character)
             {
                 if (character != Player.m_localPlayer) return;
-                Player.m_localPlayer.m_seman.RemoveStatusEffect("SoulcatcherTarBlob");
+                Player.m_localPlayer.m_seman.RemoveStatusEffect("SoulcatcherTarBlob".GetStableHashCode());
                 Player.m_localPlayer.m_nview.m_zdo.Set("Soulcatcher TarBlob", false);
             }
         }
@@ -110,11 +110,11 @@ public partial class Soulcatcher
             static bool Prefix(bool crouch)
             {
                 Config Effect = Player.m_localPlayer.GetEffectPower<Config>("TarBlob Soul Power");
-                if (Effect.Duration > 0 && crouch && !Player.m_localPlayer.m_seman.GetStatusEffect(Name_Cooldown))
+                if (Effect.Duration > 0 && crouch && !Player.m_localPlayer.m_seman.GetStatusEffect(Name_Cooldown.GetStableHashCode()))
                 {
-                    StatusEffect cooldown = Player.m_localPlayer.m_seman.AddStatusEffect(Name_Cooldown);
+                    StatusEffect cooldown = Player.m_localPlayer.m_seman.AddStatusEffect(Name_Cooldown.GetStableHashCode());
                     if (cooldown) cooldown.m_ttl = Effect.Cooldown;
-                    StatusEffect SE_Effect = Player.m_localPlayer.m_seman.AddStatusEffect("SoulcatcherTarBlob");
+                    StatusEffect SE_Effect = Player.m_localPlayer.m_seman.AddStatusEffect("SoulcatcherTarBlob".GetStableHashCode());
                     if (SE_Effect)
                     {
                         ((SE_SoulcatcherTarBlob)SE_Effect).m_ttl = Effect.Duration;

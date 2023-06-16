@@ -56,22 +56,16 @@
           <HintPath>D:\Project\MarketplaceRevamp\bin\Release\assembly_sunshafts.dll</HintPath>
         </Reference>
         <Reference Include="assembly_utils">
-          <HintPath>..\MagicHeim\MagicHeim\Libs\assembly_utils_publicized.dll</HintPath>
+          <HintPath>..\Marketplace\Libs\assembly_utils.dll</HintPath>
         </Reference>
         <Reference Include="assembly_valheim">
-          <HintPath>..\MagicHeim\MagicHeim\Libs\assembly_valheim_publicized.dll</HintPath>
+          <HintPath>..\Marketplace\Libs\assembly_valheim.dll</HintPath>
         </Reference>
         <Reference Include="BepInEx">
           <HintPath>D:\SteamLibrary\steamapps\common\Valheim\BepInEx\core\BepInEx.dll</HintPath>
         </Reference>
         <Reference Include="fastJSON">
           <HintPath>D:\Project\MarketplaceRevamp\bin\Release\fastJSON.dll</HintPath>
-        </Reference>
-        <Reference Include="ItemDataManager">
-          <HintPath>libs\ItemDataManager.dll</HintPath>
-        </Reference>
-        <Reference Include="ItemManager">
-          <HintPath>libs\ItemManager.dll</HintPath>
         </Reference>
         <Reference Include="Jewelcrafting">
           <HintPath>libs\Jewelcrafting.dll</HintPath>
@@ -324,6 +318,8 @@
         <Compile Include="GemPowers\TickGem.cs" />
         <Compile Include="GemPowers\UlvGem.cs" />
         <Compile Include="GlobalUsings.cs" />
+        <Compile Include="ItemDataManager_Modified.cs" />
+        <Compile Include="ItemManager.cs" />
         <Compile Include="Jewelry.cs" />
         <Compile Include="SoulPlatform.cs" />
         <Compile Include="SoulSpawnCustom.cs" />
@@ -353,7 +349,6 @@
         <Compile Include="GemPowers\WolfGem.cs" />
         <Compile Include="GemPowers\WraithGem.cs" />
         <Compile Include="GemPowers\YagluthGem.cs" />
-        <Compile Include="HashValidation.cs" />
         <Compile Include="Lantern.cs" />
         <Compile Include="LanternCombinatorUI.cs" />
         <Compile Include="PrefabPhotoManager.cs" />

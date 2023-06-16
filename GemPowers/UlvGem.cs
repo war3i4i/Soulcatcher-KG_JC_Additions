@@ -34,7 +34,7 @@ public partial class Soulcatcher
                 {
                     Player p = Player.m_localPlayer;
                     Config Effect = p.GetEffectPower<Config>("Ulv Soul Power");
-                    if (Effect.Cooldown > 0 && !p.m_seman.GetStatusEffect(Name_Cooldown))
+                    if (Effect.Cooldown > 0 && !p.m_seman.GetStatusEffect(Name_Cooldown.GetStableHashCode()))
                     {
                         p.GetComponent<Collider>().enabled = false;
                         bool castHit = Physics.Raycast(GameCamera.instance.transform.position, GameCamera.instance.transform.forward,
@@ -74,7 +74,7 @@ public partial class Soulcatcher
                             hit.m_point = target;
                             c.Damage(hit);
 
-                            StatusEffect cooldown = p.m_seman.AddStatusEffect(Name_Cooldown);
+                            StatusEffect cooldown = p.m_seman.AddStatusEffect(Name_Cooldown.GetStableHashCode());
                             if (cooldown) cooldown.m_ttl = Effect.Cooldown;
                             return false;
                         }

@@ -143,7 +143,7 @@ public partial class Soulcatcher
                 return;
             }
 
-            float maxDistance = Player.m_localPlayer.m_seman.GetStatusEffect("SoulRing") ? 40f : 20f;
+            float maxDistance = Player.m_localPlayer.m_seman.GetStatusEffect("SoulRing".GetStableHashCode()) ? 40f : 20f;
 
             bool IsGameObjectInFront = Vector3.Angle(Player.m_localPlayer.transform.forward,
                 (gameObject.transform.position - Player.m_localPlayer.transform.position).normalized) < 60f;
@@ -218,11 +218,11 @@ public partial class Soulcatcher
                 Vector3 newPosition = Vector3.MoveTowards(gameObject.transform.position, targetPoint, speed);
                 gameObject.transform.position = newPosition;
                 TornadoPositioning();
-                zanim.SetFloat(Character.forward_speed, 1.5f);
+                zanim.SetFloat(Character.s_forwardSpeed, 1.5f);
             }
             else
             {
-                zanim.SetFloat(Character.forward_speed, 0);
+                zanim.SetFloat(Character.s_forwardSpeed, 0);
                 float add = MoveUp ? 0.005f : -0.005f;
                 transform.position += new Vector3(0, add, 0);
                 MoveCount += Time.deltaTime;
@@ -250,7 +250,7 @@ public partial class Soulcatcher
             !_soulcatcher_soulspawn_additions.TryGetValue(prefab, out soulspawn)) return;
         int random = Player.m_debugMode ? 0 : Random.Range(0, 101);
         int AdditionalChance = level * 1 + (int)(Player.m_localPlayer.GetSkillFactor("Soulcatcher") * 5f);
-        if (Player.m_localPlayer.m_seman.GetStatusEffect("SoulNecklace"))
+        if (Player.m_localPlayer.m_seman.GetStatusEffect("SoulNecklace".GetStableHashCode()))
         {
             AdditionalChance += 10;
         }

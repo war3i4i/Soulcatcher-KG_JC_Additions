@@ -24,7 +24,7 @@ public partial class Soulcatcher
     
     public static class Skeleton_Soul_Power
     {
-        private static readonly int Tool_Tier = "Skeleton_Soul_Power".GetStableHashCode();
+        private static readonly short Tool_Tier = 32000;
         
         public static GameObject VFX;
 

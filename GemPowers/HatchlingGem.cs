@@ -90,9 +90,9 @@ public partial class Soulcatcher
                 if (__instance.m_character != Player.m_localPlayer) return; 
                 Player p = Player.m_localPlayer; 
                 Config Effect = p.GetEffectPower<Config>("Hatchling Soul Power");
-                if (Effect.Value > 0 && !p.m_seman.GetStatusEffect(Name_Cooldown))
+                if (Effect.Value > 0 && !p.m_seman.GetStatusEffect(Name_Cooldown.GetStableHashCode()))
                 {
-                    StatusEffect cooldown = p.m_seman.AddStatusEffect(Name_Cooldown);
+                    StatusEffect cooldown = p.m_seman.AddStatusEffect(Name_Cooldown.GetStableHashCode());
                     if (cooldown) cooldown.m_ttl = 20f;
                     Vector3 target = GameCamera.instance.transform.position + p.GetLookDir() * 100f;
                     Vector3 rot = (target - p.transform.position).normalized;

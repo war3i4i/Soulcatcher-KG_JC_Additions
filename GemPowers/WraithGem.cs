@@ -27,7 +27,7 @@ public partial class Soulcatcher
         }
     }
     
-    [HarmonyPatch(typeof(Character), nameof(Character.FixedUpdate))]
+    [HarmonyPatch(typeof(Character), nameof(Character.CustomFixedUpdate))]
     private static class PriestCancelTP
     {
         private static void Postfix(Character __instance)
@@ -129,7 +129,7 @@ public partial class Soulcatcher
                 {
                     Player p = Player.m_localPlayer;
                     Config Effect = p.GetEffectPower<Config>("Wraith Soul Power");
-                    if (Effect.Cooldown > 0 && !p.m_seman.GetStatusEffect(Name_Cooldown))
+                    if (Effect.Cooldown > 0 && !p.m_seman.GetStatusEffect(Name_Cooldown.GetStableHashCode()))
                     {
                         bool castHit = Physics.Raycast(GameCamera.instance.transform.position, GameCamera.instance.transform.forward,
                             out RaycastHit raycast,
@@ -144,7 +144,7 @@ public partial class Soulcatcher
                             }
                             else
                             {
-                                StatusEffect cooldown = p.m_seman.AddStatusEffect(Name_Cooldown);
+                                StatusEffect cooldown = p.m_seman.AddStatusEffect(Name_Cooldown.GetStableHashCode());
                                 if (cooldown) cooldown.m_ttl = Effect.Cooldown;
                                 _thistype.StartCoroutine(_thistype.WraithMovement(p.transform.position, target));
                             }

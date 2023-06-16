@@ -31,11 +31,9 @@ public partial class Soulcatcher
         {
             float multiply = 1 + Multiplier * 0.01f;
             hit.ApplyModifier(multiply);
-            
         }
     }
- 
-
+    
     
     public static class Fenring_Soul_Power
     {
@@ -66,14 +64,14 @@ public partial class Soulcatcher
             { 
                 __instance.m_nview.Register("Soulcatcher FentingEffect", new Action<long, int>((_, Value) =>
                 {
-                    StatusEffect SE_Effect = __instance.m_seman.GetStatusEffect("SoulcatcherFenring");
+                    StatusEffect SE_Effect = __instance.m_seman.GetStatusEffect("SoulcatcherFenring".GetStableHashCode());
                     if (SE_Effect)
                     {
                         ((SE_SoulcatcherFenring)SE_Effect).Multiplier += Value;
                     }
                     else
                     {
-                        SE_Effect = __instance.m_seman.AddStatusEffect("SoulcatcherFenring");
+                        SE_Effect = __instance.m_seman.AddStatusEffect("SoulcatcherFenring".GetStableHashCode());
                         if (SE_Effect) 
                         {
                             ((SE_SoulcatcherFenring)SE_Effect).Multiplier = Value;

@@ -7,7 +7,5 @@ public partial class Soulcatcher
         Skill SoulcatcherSkill = new Skill("Soulcatcher", "icon.png");
         SoulcatcherSkill.Name.English("Soulcatcher");
         SoulcatcherSkill.Description.English("Catch souls faster");
-        SoulcatcherSkill.Name.Russian("Душелов");
-        SoulcatcherSkill.Description.Russian("Увеличивает скорость поглощения душ");
     }
 }

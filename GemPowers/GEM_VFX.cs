@@ -19,29 +19,29 @@ public partial class Soulcatcher
             Player p = Player.m_localPlayer;
             if (p.GetEffectPower<Yagluth_Soul_Power.Config>("Yagluth Soul Power").Value > 0)
             {
-               p.m_seman.AddStatusEffect("Soulcatcher_Yagluth_VFX");
+               p.m_seman.AddStatusEffect("Soulcatcher_Yagluth_VFX".GetStableHashCode());
             }
             else
             {
-               p.m_seman.RemoveStatusEffect("Soulcatcher_Yagluth_VFX");
+               p.m_seman.RemoveStatusEffect("Soulcatcher_Yagluth_VFX".GetStableHashCode());
             }
             
             if (p.GetEffectPower<Bonemass_Soul_Power.Config>("Bonemass Soul Power").Value > 0)
             {
-               p.m_seman.AddStatusEffect("Soulcatcher_Bonemass_VFX");
+               p.m_seman.AddStatusEffect("Soulcatcher_Bonemass_VFX".GetStableHashCode());
             }
             else
             {
-               p.m_seman.RemoveStatusEffect("Soulcatcher_Bonemass_VFX");
+               p.m_seman.RemoveStatusEffect("Soulcatcher_Bonemass_VFX".GetStableHashCode());
             }
             
             if (p.GetEffectPower<Moder_Soul_Power.Config>("Moder Soul Power").Value > 0)
             {
-               p.m_seman.AddStatusEffect("Soulcatcher_Moder_VFX");
+               p.m_seman.AddStatusEffect("Soulcatcher_Moder_VFX".GetStableHashCode());
             }
             else
             {
-               p.m_seman.RemoveStatusEffect("Soulcatcher_Moder_VFX");
+               p.m_seman.RemoveStatusEffect("Soulcatcher_Moder_VFX".GetStableHashCode());
             }
          };
          

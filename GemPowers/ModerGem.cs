@@ -66,7 +66,7 @@ public partial class Soulcatcher
             {
                 __instance.m_nview.Register("Soulcatcher ModerEffect", new Action<long, float>((_, Value) =>
                 {
-                    StatusEffect SE_Effect = __instance.m_seman.GetStatusEffect("SoulcatcherModer");
+                    StatusEffect SE_Effect = __instance.m_seman.GetStatusEffect("SoulcatcherModer".GetStableHashCode());
                     if (SE_Effect)
                     {
                         ((SE_SoulcatcherModer)SE_Effect).Slow = Value;
@@ -74,7 +74,7 @@ public partial class Soulcatcher
                     }
                     else
                     {
-                        SE_Effect = __instance.m_seman.AddStatusEffect("SoulcatcherModer", true);
+                        SE_Effect = __instance.m_seman.AddStatusEffect("SoulcatcherModer".GetStableHashCode(), true);
                         if (SE_Effect) 
                         {
                             ((SE_SoulcatcherModer)SE_Effect).Slow = Value;

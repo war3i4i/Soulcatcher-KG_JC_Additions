@@ -8,15 +8,14 @@ public partial class Soulcatcher
         {
             [AdditivePower] public float Value;
         }
-
-
+        
         [HarmonyPatch(typeof(SEMan), nameof(SEMan.OnDamaged))]
         static class SEMan_ModifyEitrRegen_Patch
         {
             static void Postfix(SEMan __instance, ref HitData hit)
             {
-                var eff = Player.m_localPlayer.GetEffectPower<TheQueen_Soul_Power.Config>(
-                    "The Queen Soul Power");
+                if(__instance.m_character != Player.m_localPlayer || !Player.m_localPlayer) return;
+                var eff = Player.m_localPlayer.GetEffectPower<TheQueen_Soul_Power.Config>("The Queen Soul Power");
                 if (eff.Value > 0)
                 {
                     hit.m_damage.m_blunt *= Mathf.Clamp01(1 - eff.Value / 100f);

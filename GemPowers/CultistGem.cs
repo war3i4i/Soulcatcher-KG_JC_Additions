@@ -116,11 +116,11 @@ public partial class Soulcatcher
                 if (__instance.m_character != Player.m_localPlayer) return;
                 Player p = Player.m_localPlayer;
                 Config Effect = p.GetEffectPower<Config>("Cultist Soul Power");
-                if (Effect.Value > 0 && !p.m_seman.GetStatusEffect(Name_Cooldown))
+                if (Effect.Value > 0 && !p.m_seman.GetStatusEffect(Name_Cooldown.GetStableHashCode()))
                 {
-                    StatusEffect cooldown = p.m_seman.AddStatusEffect(Name_Cooldown);
+                    StatusEffect cooldown = p.m_seman.AddStatusEffect(Name_Cooldown.GetStableHashCode());
                     if(cooldown) cooldown.m_ttl = Effect.Cooldown;
-                    StatusEffect SE_Effect = Player.m_localPlayer.m_seman.AddStatusEffect("SoulcatcherCultist");
+                    StatusEffect SE_Effect = Player.m_localPlayer.m_seman.AddStatusEffect("SoulcatcherCultist".GetStableHashCode());
                     if (SE_Effect)
                     {
                         ((SE_SoulcatcherCultist)SE_Effect).Damage =

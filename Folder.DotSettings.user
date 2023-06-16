@@ -3,6 +3,8 @@
 	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CUsers_005CKilling_0020God_005CRiderProjects_005CMagicHeim_005CMagicHeim_005CLibs_005Cassembly_005Fguiutils_005Fpublicized_002Edll/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CUsers_005CKilling_0020God_005CRiderProjects_005CMagicHeim_005CMagicHeim_005CLibs_005Cassembly_005Futils_005Fpublicized_002Edll/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CUsers_005CKilling_0020God_005CRiderProjects_005CMagicHeim_005CMagicHeim_005CLibs_005Cassembly_005Fvalheim_005Fpublicized_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CUsers_005CKilling_0020God_005CRiderProjects_005CMarketplace_005CLibs_005Cassembly_005Futils_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CUsers_005CKilling_0020God_005CRiderProjects_005CMarketplace_005CLibs_005Cassembly_005Fvalheim_002Edll/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CUsers_005CKilling_0020God_005CRiderProjects_005CSoulcatcher_002DKG_005FJC_005FAdditions_005Clibs_005CItemDataManager_002Edll/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CUsers_005CKilling_0020God_005CRiderProjects_005CSoulcatcher_002DKG_005FJC_005FAdditions_005Clibs_005CItemManager_002Edll/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CUsers_005CKilling_0020God_005CRiderProjects_005CSoulcatcher_002DKG_005FJC_005FAdditions_005Clibs_005CJewelcraftingAPI_002Edll/@EntryIndexedValue">True</s:Boolean>
@@ -14,6 +16,8 @@
 	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=D_003A_005CProgramming_0020stuff_005CGOOD_0020PROGRAMS_005CAssemblyPublicizer_005C123_005Cpublicized_005Fassemblies_005Cassembly_005Fguiutils_005Fpublicized_002Edll/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=D_003A_005CProgramming_0020stuff_005CGOOD_0020PROGRAMS_005CAssemblyPublicizer_005C123_005Cpublicized_005Fassemblies_005Cassembly_005Futils_005Fpublicized_002Edll/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=D_003A_005CProgramming_0020stuff_005CGOOD_0020PROGRAMS_005CAssemblyPublicizer_005C123_005Cpublicized_005Fassemblies_005Cassembly_005Fvalheim_005Fpublicized_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=D_003A_005CRiderProjects_005CMarketplace_005CLibs_005Cassembly_005Futils_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=D_003A_005CRiderProjects_005CMarketplace_005CLibs_005Cassembly_005Fvalheim_002Edll/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=D_003A_005CSteamLibrary_005Csteamapps_005Ccommon_005CValheim_005CBepInEx_005Ccore_005CBepInEx_002Edll/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=D_003A_005CSteamLibrary_005Csteamapps_005Ccommon_005CValheim_005CBepInEx_005Cplugins_005CJewelcrafting_002Edll/@EntryIndexedValue">True</s:Boolean>
 	<s:String x:Key="/Default/CodeInspection/PencilsConfiguration/ActualSeverity/@EntryValue">ERROR</s:String>

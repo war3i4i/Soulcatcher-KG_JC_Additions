@@ -72,11 +72,11 @@ public partial class Soulcatcher
             static bool Prefix(bool crouch)
             {
                 Config Effect = Player.m_localPlayer.GetEffectPower<Config>("Abomination Soul Power");
-                if (Effect.Value > 0 && crouch && !Player.m_localPlayer.m_seman.GetStatusEffect(Name_Cooldown))
+                if (Effect.Value > 0 && crouch && !Player.m_localPlayer.m_seman.GetStatusEffect(Name_Cooldown.GetStableHashCode()))
                 {
-                    StatusEffect cooldown = Player.m_localPlayer.m_seman.AddStatusEffect(Name_Cooldown);
+                    StatusEffect cooldown = Player.m_localPlayer.m_seman.AddStatusEffect(Name_Cooldown.GetStableHashCode());
                     if (cooldown) cooldown.m_ttl = Effect.Cooldown;
-                    StatusEffect SE_Effect = Player.m_localPlayer.m_seman.AddStatusEffect("SoulcatcherAbomination");
+                    StatusEffect SE_Effect = Player.m_localPlayer.m_seman.AddStatusEffect("SoulcatcherAbomination".GetStableHashCode());
                     if (SE_Effect)
                     {
                         ((SE_SoulcatcherAbomination)SE_Effect).Reduction = Effect.Value;

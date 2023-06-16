@@ -9,7 +9,7 @@ public partial class Soulcatcher
             [MultiplicativePercentagePower] public float Value;
         }
 
-         [HarmonyPatch(typeof(Character),nameof(Character.UpdateSwiming))]
+         [HarmonyPatch(typeof(Character),nameof(Character.UpdateSwimming))]
          static class Character_UpdateSwiming_Patch
          {
              static void IncreaseSwimSpeed(Character c,ref float speed)

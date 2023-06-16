@@ -153,7 +153,7 @@ public partial class Soulcatcher
                         list.AddItem(Player.m_localPlayer);
                         foreach (Character character in list)
                         {
-                            character.m_seman.AddStatusEffect("AlphaWolfAura", true);
+                            character.m_seman.AddStatusEffect("AlphaWolfAura".GetStableHashCode(), true);
                         }
                     }
                 }

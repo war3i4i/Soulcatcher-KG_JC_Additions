@@ -84,7 +84,7 @@ public partial class Soulcatcher
                                 Quaternion.identity);
                             foreach (Character character in list)
                             {
-                                character.m_seman.AddStatusEffect("SoulcatcherElder");
+                                character.m_seman.AddStatusEffect("SoulcatcherElder".GetStableHashCode());
                             }
                         }
                     }
