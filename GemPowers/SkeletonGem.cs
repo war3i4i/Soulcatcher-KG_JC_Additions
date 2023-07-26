@@ -51,7 +51,7 @@ public partial class Soulcatcher
                     int random = Random.Range(0, 101);
                     if (random <= Effect.Chance)
                     {
-                        hit.m_toolTier = Tool_Tier; 
+                        hit.m_itemLevel = Tool_Tier; 
                         hit.m_pushForce = (int)Effect.Value; 
                     }
                 }
@@ -64,7 +64,7 @@ public partial class Soulcatcher
         {
             static void Postfix(Character __instance, HitData hit)
             {
-                if (__instance.GetHealth() <= 0 && hit.m_toolTier == Tool_Tier)
+                if (__instance.GetHealth() <= 0 && hit.m_itemLevel == Tool_Tier)
                 {
                     string prefab = Utils.GetPrefabName(__instance.gameObject);
                     float time = 2f;
