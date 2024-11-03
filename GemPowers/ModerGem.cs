@@ -27,7 +27,7 @@ public partial class Soulcatcher
             };
         }
 
-        public override void ModifySpeed(float baseSpeed, ref float speed)
+        public override void ModifySpeed(float baseSpeed, ref float speed, Character character, Vector3 dir)
         {
             speed *= Slow;
         }

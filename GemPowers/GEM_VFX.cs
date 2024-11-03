@@ -48,6 +48,11 @@ public partial class Soulcatcher
          Yagluth_VFX = asset.LoadAsset<GameObject>("Yagluth_VFX");
          Bonemass_VFX = asset.LoadAsset<GameObject>("Bonemass_VFX");
          Eikthyr_VFX = asset.LoadAsset<GameObject>("Eikthyr_VFX");
+
+         var tempFix = Eikthyr_VFX.AddComponent<TimedDestruction>();
+         tempFix.m_triggerOnAwake = true;
+         tempFix.m_timeout = 3f;
+         
          Moder_VFX = asset.LoadAsset<GameObject>("Moder_Main_VFX");
          Special_VFX_ToObjectDB.Add(Yagluth_VFX);
          Special_VFX_ToObjectDB.Add(Bonemass_VFX);

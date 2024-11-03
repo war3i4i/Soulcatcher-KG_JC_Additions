@@ -1,4 +1,5 @@
-﻿using Random = UnityEngine.Random;
+﻿using TMPro;
+using Random = UnityEngine.Random;
 
 namespace Soulcatcher_KG_JC_Additions;
 
@@ -15,7 +16,7 @@ public partial class Soulcatcher
             m_gui = Instantiate(DamageText.instance.m_worldTextBase, DamageText.instance.transform)
         };
         worldTextInstance.m_gui.GetComponent<RectTransform>().sizeDelta *= 2;
-        worldTextInstance.m_textField = worldTextInstance.m_gui.GetComponent<Text>();
+        worldTextInstance.m_textField = worldTextInstance.m_gui.GetComponent<TMP_Text>();
         DamageText.instance.m_worldTexts.Add(worldTextInstance);
         worldTextInstance.m_textField.color = c; 
         worldTextInstance.m_textField.fontSize = 20;
@@ -37,7 +38,7 @@ public partial class Soulcatcher
         {
             static void Prefix(ref HitData hit)
             {
-                if(hit.GetAttacker() != Player.m_localPlayer) return;
+                if (!Player.m_localPlayer || hit.GetAttacker() != Player.m_localPlayer) return; 
                 Config Effect = Player.m_localPlayer.GetEffectPower<Config>("Deathsquito Soul Power");
                 if (Effect.Value > 0)
                 {
@@ -49,7 +50,6 @@ public partial class Soulcatcher
                     }
                 }
             }
-            
         }
         
     }

@@ -5,7 +5,6 @@ public partial class Soulcatcher
     private const string All_Souls_Command = "/sc souls";
     private const string Add_Soul_Command = "/sc soul ";
     private const string Finish_Altars = "/sc altar time";
-    private const string Add_Soul_Bowl = "/sc bowl";
     private const string Update_Convertion = "/sc update convertions";
 
 

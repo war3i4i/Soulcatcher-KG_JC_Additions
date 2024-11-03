@@ -109,8 +109,6 @@ public partial class Soulcatcher
         [HarmonyPatch(typeof(Attack), nameof(Attack.DoMeleeAttack))]
         static class Attack_DoMeleeAttack_Patch
         {
-            
-
             static void Prefix(Attack __instance)
             {
                 if (__instance.m_character != Player.m_localPlayer) return;

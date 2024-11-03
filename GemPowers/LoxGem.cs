@@ -14,7 +14,7 @@ public partial class Soulcatcher
         {
             private static void Prefix(ref HitData hit)
             {
-                if(hit.GetAttacker() != Player.m_localPlayer ) return;
+                if (!Player.m_localPlayer || hit.GetAttacker() != Player.m_localPlayer) return; 
                 Config Effect = Player.m_localPlayer.GetEffectPower<Config>("Lox Soul Power");
                 if (Effect.Value > 0)
                 {

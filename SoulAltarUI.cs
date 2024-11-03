@@ -194,8 +194,8 @@ public partial class Soulcatcher
         {
             CurrentSoulAltar = _altar;
             Default();
-            UI.SetActive(true);
             InventoryGui.instance.Show(null);
+            UI.SetActive(true);
             UI.transform.Find("Canvas/InfoTab").gameObject.SetActive(false);
         }
 
@@ -287,7 +287,7 @@ public partial class Soulcatcher
         }
     }
 
-    [HarmonyPatch(typeof(Menu), nameof(Menu.IsVisible))]
+    [HarmonyPatch(typeof(TextInput), nameof(TextInput.IsVisible))]
     static class Menu_IsVisible_Patch
     {
         static void Postfix(ref bool __result)

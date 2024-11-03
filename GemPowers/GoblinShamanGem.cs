@@ -14,6 +14,7 @@ public partial class Soulcatcher
         {
             static void Prefix(Character __instance, ref HitData hit)
             {
+                if(!Player.m_localPlayer) return;
               if(__instance != Player.m_localPlayer || !hit.m_ranged) return;
               float Effect = Player.m_localPlayer.GetEffectPower<Config>("GoblinShaman Soul Power").Value;
               if (Effect > 0)

@@ -86,11 +86,11 @@ public partial class Soulcatcher
         {
             static void Prefix(Character __instance, ref HitData hit)
             {
-                if(hit.GetAttacker() != Player.m_localPlayer) return;
+                if(!Player.m_localPlayer || hit.GetAttacker() != Player.m_localPlayer) return;
                 Config Effect = Player.m_localPlayer.GetEffectPower<Config>("Fenring Soul Power");
                 if (Effect.Value > 0)
                 {
-                    __instance.m_nview.InvokeRPC( "Soulcatcher FentingEffect", (int)Effect.Value);
+                    __instance.m_nview?.InvokeRPC( "Soulcatcher FentingEffect", (int)Effect.Value);
                 }
             }
         }

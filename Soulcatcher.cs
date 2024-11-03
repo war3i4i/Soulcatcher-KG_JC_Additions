@@ -9,16 +9,16 @@ namespace Soulcatcher_KG_JC_Additions;
 public partial class Soulcatcher : BaseUnityPlugin
 {
     private const string GUID = "Soulcatcher";
-    private const string PluginName = "Soulcatcher"; 
-    private const string PluginVersion = "4.4.3"; 
-    private static AssetBundle asset;
-    private static Soulcatcher _thistype;
+    private const string PluginName = "Soulcatcher";
+    private const string PluginVersion = "4.5.7"; 
+    private static AssetBundle asset; 
+    public static Soulcatcher _thistype; 
     private static readonly string ConfigFileName = GUID + ".cfg";
  
     private static readonly ConfigSync configSync = new(GUID)
-        { DisplayName = PluginName, CurrentVersion = PluginVersion };  
+        { DisplayName = PluginName, CurrentVersion = PluginVersion };
 
-
+ 
     public void Awake()
     {
         Ulv_Soul_Power.Script_Layermask = LayerMask.GetMask("character",
@@ -53,13 +53,18 @@ public partial class Soulcatcher : BaseUnityPlugin
         SoulAltarUI.Init();
         SetupWatcher();
         InitCustomConvertions();
-        AddValhallaItem();
+        CursedDoll = asset.LoadAsset<GameObject>("Soulcatcher_CursedDoll");
+        CursedDoll.GetComponent<ItemDrop>().m_itemData.m_shared.m_icons[0] = CreateDynamicSprite(Gem.PiecesTexture,
+            CursedDoll.GetComponent<ItemDrop>().m_itemData.m_shared.m_icons[0].texture, "CursedDoll");
+        Jewelcrafting.API.OnItemBreak(Soulcatcher_KG_JC_Additions.CursedDoll.BreakHandler_CursedDoll);
         new Harmony(GUID).PatchAll();
         print(
             "If you have an error \"The power must be a list of exactly 4 numbers denoting the strength of the effect....\" then delete BepInEx/Config/Jewelcrafting.Sockets_Soulcatcher_KG_JC_Additions.yml file and restart the game");
         stopwatch.Stop();
         print($"{PluginName} v{PluginVersion} loaded in {stopwatch.ElapsedMilliseconds}ms");
     }
+
+    public static GameObject CursedDoll;
 
     private static void SetupWatcher()
     {
@@ -99,7 +104,7 @@ public partial class Soulcatcher : BaseUnityPlugin
     }
  
 
-    private static ConfigEntry<T> config<T>(string group, string name, T value, string description,
+    public static ConfigEntry<T> config<T>(string group, string name, T value, string description,
         bool synchronizedSetting = true) =>
         config(group, name, value, new ConfigDescription(description), synchronizedSetting);
 
@@ -185,15 +190,15 @@ public partial class Soulcatcher : BaseUnityPlugin
             : $"{secs}<color=#00FF00>s</color>";
     }
 
-    private static void print(object obj)
+    public static void print(object obj)
     {
         if (Application.platform == RuntimePlatform.WindowsPlayer)
         {
             ConsoleManager.SetConsoleColor(ConsoleColor.DarkCyan);
             ConsoleManager.StandardOutStream.WriteLine($"[Soulcatcher] {obj}");
             ConsoleManager.SetConsoleColor(ConsoleColor.White);
-        }
-        else
+        } 
+        else 
         {
             MonoBehaviour.print("[Soulcatcher] " + obj);
         }

@@ -14,8 +14,7 @@ public partial class Soulcatcher
         {
             static void Postfix(SEMan __instance, Skills.SkillType skill, ref float level)
             {
-                if (__instance.m_character != Player.m_localPlayer ||
-                    skill is not Skills.SkillType.BloodMagic) return;
+                if (__instance.m_character) return;
 
                 var eff = Player.m_localPlayer.GetEffectPower<Dverger_BloodMage_Soul_Power.Config>(
                     "Dverger Blood Mage Soul Power");

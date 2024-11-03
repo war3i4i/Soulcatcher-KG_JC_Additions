@@ -150,7 +150,7 @@ public partial class Soulcatcher
             ObjectDB.instance.m_recipes.Add(lanternRecipe);
         }
 
-        ObjectDB.instance.UpdateItemHashes();
+        ObjectDB.instance.UpdateRegisters();
     }
 
     [HarmonyPatch(typeof(ObjectDB), "Awake")]
@@ -174,7 +174,7 @@ public partial class Soulcatcher
     }
 
     [HarmonyPatch(typeof(ItemDrop.ItemData), nameof(ItemDrop.ItemData.GetTooltip), typeof(ItemDrop.ItemData),
-        typeof(int), typeof(bool))]
+        typeof(int), typeof(bool), typeof(float), typeof(int))]
     static class ItemDrop__Patch
     {
         static void Postfix(ItemDrop.ItemData item, ref string __result)
@@ -187,7 +187,7 @@ public partial class Soulcatcher
     }
 
 
-    public class LanternComponent : ItemDataManager.ItemData
+    public class LanternComponent : ItemData
     {
         Dictionary<string, int> CreatureSouls = new();
 
@@ -203,6 +203,7 @@ public partial class Soulcatcher
         public override void Save()
         {
             Value = JSON.ToJSON(CreatureSouls);
+            Player.m_localPlayer?.m_inventory.Changed();
         }
 
 

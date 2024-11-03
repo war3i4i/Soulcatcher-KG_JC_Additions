@@ -26,7 +26,7 @@ public partial class Soulcatcher
         new Gem("NeckGem", "Neck", "Neck Soul Gem");
         API.AddGemEffect<Neck_Soul_Power.Config>("Neck Soul Power");
         sb.AppendLine();
-        sb.AppendLine("Neck Soul Power:");
+        sb.AppendLine("Neck Soul Power:"); 
         sb.AppendLine("  slot: legs");
         sb.AppendLine("  gem: Neck Soul Gem");
         sb.AppendLine("  power:");
@@ -474,7 +474,7 @@ public partial class Soulcatcher
         public static readonly Dictionary<string, Sprite> CooldownIcons = new();
         public static readonly Dictionary<string, Sprite> ActiveIcons = new();
 
-
+        
         [Flags]
         public enum GemTier
         {
@@ -533,23 +533,19 @@ public partial class Soulcatcher
         public Gem(string prefab, string costPrefab, string JC_Name, GemTier tier = GemTier.All, string postfix = "")
         {
             Prefab = asset.LoadAsset<GameObject>(prefab);
-            CostPrefab = costPrefab;
+            CostPrefab = costPrefab; 
             Name_Postfix = postfix;
-
             CostCountEntry = config($"Gems Cost Amount", $"{Prefab.name} Cost Amount", 30,
                 "Cost amount of gem creation");
             CraftDurationEntry = config($"Gems Craft Time", $"{Prefab.name} Craft Time", 600,
                 "Gem craft duration (seconds)");
             IsCraftable = config("Gems Craftable", $"{Prefab.name} Craftable", true, "Set gem craftable");
-
             CostCountEntry.SettingChanged += SettingChanged_ConvertionUpdate;
             IsCraftable.SettingChanged += SettingChanged_ConvertionUpdate;
-
             GetIcon = Prefab.GetComponent<ItemDrop>().m_itemData.GetIcon();
             Name = Localization.instance.Localize(Prefab.GetComponent<ItemDrop>().m_itemData.m_shared.m_name);
             IEnumerable<Color> pixels = Prefab.GetComponentsInChildren<ParticleSystem>(true)
                 .Select(ps => ps.startColor);
-
             float r = 0, g = 0, b = 0;
             foreach (Color pixel in pixels)
             {
@@ -562,17 +558,15 @@ public partial class Soulcatcher
             int count = pixels.Count();
             r /= count;
             g /= count; 
-            b /= count;
-
+            b /= count; 
             SoulColors[CostPrefab] = new Color(r, g, b);
             SoulConvertions[CostPrefab] = prefab;
-            MainGems.Add(this);
+            MainGems.Add(this); 
             API.AddGem(Prefab, JC_Name);
             GemTextures.Add(Prefab.name, GetIcon.texture);
             GemsToObjectDB.Add(this);
             CooldownIcons[prefab] = CreateDynamicSprite(CooldownTexture, GetIcon.texture, $"{prefab}_Cooldown");
             ActiveIcons[prefab] = CreateDynamicSprite(DefaultTextureWhite, GetIcon.texture, $"{prefab}_Active");
-
             if (tier != GemTier.None)
             {
                 Prefab.GetComponent<ItemDrop>().m_itemData.m_shared.m_icons[0] =

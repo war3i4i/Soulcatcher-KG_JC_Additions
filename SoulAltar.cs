@@ -12,8 +12,7 @@ public partial class Soulcatcher
 
     static void PrepareAltar()
     {
-        Stream stream = Assembly.GetExecutingAssembly()
-            .GetManifestResourceStream("Soulcatcher_KG_JC_Additions.libs.SoulcatcherScripts.dll");
+        Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("Soulcatcher_KG_JC_Additions.libs.SoulcatcherScripts.dll");
         byte[] buffer = new byte[stream.Length];
         stream.Read(buffer, 0, buffer.Length);
         Assembly.Load(buffer);
@@ -70,7 +69,7 @@ public partial class Soulcatcher
         private Image _icon;
         private Light Light; 
 
-        private void Awake()
+        private void Awake() 
         {
             _internalCounter = 0;
             znv = GetComponent<ZNetView>();

@@ -130,6 +130,6 @@ public partial class Soulcatcher
         }
 
 
-        ObjectDB.instance.UpdateItemHashes();
+        ObjectDB.instance.UpdateRegisters();
     }
 }

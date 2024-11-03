@@ -9,7 +9,7 @@ public partial class Soulcatcher
             [AdditivePower] public float Value;
         }
         
-        [HarmonyPatch(typeof(SEMan),nameof(SEMan.ModifyAttack))]
+        /*[HarmonyPatch(typeof(SEMan),nameof(SEMan.ModifyAttack))]
         static class SEMan_ModifyAttack_Patch
         {
             static void Postfix(SEMan __instance, Skills.SkillType skill, ref HitData hitData)
@@ -22,6 +22,6 @@ public partial class Soulcatcher
                     hitData.ApplyModifier(1 + eff.Value / 100f);
                 }
             }
-        }
+        }*/
     }
 }

@@ -10,7 +10,7 @@ public partial class Soulcatcher
         }
 
 
-        [HarmonyPatch(typeof(SEMan), nameof(SEMan.ModifyEitrRegen))]
+        /*[HarmonyPatch(typeof(SEMan), nameof(SEMan.ModifyEitrRegen))]
         static class SEMan_ModifyEitrRegen_Patch
         {
             static void Postfix(ref float eitrMultiplier)
@@ -22,6 +22,6 @@ public partial class Soulcatcher
                     eitrMultiplier += (eff.Value / 100f);
                 }
             }
-        }
+        }*/
     }
 }

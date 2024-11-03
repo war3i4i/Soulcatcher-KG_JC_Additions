@@ -87,6 +87,5 @@ public partial class Soulcatcher
             __result = true;
             return false;
         }
-        
     }
 }

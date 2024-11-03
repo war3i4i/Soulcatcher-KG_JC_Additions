@@ -28,7 +28,7 @@ public partial class Soulcatcher
         {
             private static void Prefix(Character __instance, HitData hit)
             {
-                if (hit.GetAttacker() != Player.m_localPlayer) return;
+                if (!Player.m_localPlayer || hit.GetAttacker() != Player.m_localPlayer) return; 
                 Config Effect = Player.m_localPlayer.GetEffectPower<Config>("Bat Soul Power");
                 if (Effect.Value > 0)
                 {

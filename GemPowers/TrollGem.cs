@@ -44,6 +44,7 @@ public partial class Soulcatcher
         {
             static void Prefix(Character __instance, HitData hit)
             {
+                if(!Player.m_localPlayer) return;
                 if (hit.GetAttacker() != Player.m_localPlayer || hit.m_ranged) return;
                 Player p = Player.m_localPlayer;
                 Config Effect = p.GetEffectPower<Config>("Troll Soul Power");

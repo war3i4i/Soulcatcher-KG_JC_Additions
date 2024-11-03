@@ -10,7 +10,7 @@ public partial class Soulcatcher
         necklace.Crafting.Add(API.GetGemcuttersTable().name, 3);
         necklace.MaximumRequiredStationLevel = 3;
         necklace.RequiredItems.Add("Coins", 1000);
-        necklace.RequiredUpgradeItems.Add("Coins", 1500);
+        necklace.RequiredUpgradeItems.Add("Coins", 1500); 
         ItemDrop.ItemData.SharedData necklaceShared = necklace.Prefab.GetComponent<ItemDrop>().m_itemData.m_shared;
         SE_JewelryEffect se_necklace = ScriptableObject.CreateInstance<SE_JewelryEffect>();
         se_necklace.name = "SoulNecklace";
@@ -39,12 +39,6 @@ public partial class Soulcatcher
         ringShared.m_movementModifier = 0.05f;
         ringShared.m_armor = 10f; 
         ringShared.m_armorPerLevel = 5f; 
-  
- 
-        Item katana = new(asset.LoadAsset<GameObject>("MegaTestKatana"));
-        katana.Name.English("Soul Katana");
-        katana.Description.English("Test skin");
-        katana.RequiredItems.Add("SwordCheat", 10); 
         
     }
     

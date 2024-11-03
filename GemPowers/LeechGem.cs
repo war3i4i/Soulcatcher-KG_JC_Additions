@@ -2,9 +2,6 @@
 
 public partial class Soulcatcher
 {
- 
-
-    
     public static class Leech_Soul_Power
     {
 
@@ -18,7 +15,7 @@ public partial class Soulcatcher
         {
             private static void Prefix(Character __instance, HitData hit)
             {
-                if (hit.GetAttacker() != Player.m_localPlayer) return; 
+                if (!Player.m_localPlayer || hit.GetAttacker() != Player.m_localPlayer) return; 
                 Config Effect = Player.m_localPlayer.GetEffectPower<Config>("Leech Soul Power");
                 if (Effect.Value > 0)
                 {

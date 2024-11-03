@@ -9,7 +9,7 @@ public partial class Soulcatcher
             [AdditivePower] public float Value;
         }
 
-        [HarmonyPatch(typeof(ItemDrop.ItemData),nameof(ItemDrop.ItemData.GetWeaponLoadingTime))]
+        /*[HarmonyPatch(typeof(ItemDrop.ItemData),nameof(ItemDrop.ItemData.GetWeaponLoadingTime))]
         static class ItemDropItemData_GetWeaponLoadingTime_Patch 
         {
 
@@ -22,7 +22,7 @@ public partial class Soulcatcher
                     __result = __result * (1 - eff.Value);
                 }
             }
-        }
+        }*/
         
     }
 }
