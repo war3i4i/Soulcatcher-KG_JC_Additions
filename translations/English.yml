@@ -1,7 +1,7 @@
 soulcatcher: "Soulcatcher"
 soulcatcher_souls: "Souls"
 soulcatcher_curseddoll: "Cursed Doll"
-soulcatcher_curseddoll_description: "Removes this doll from your inventory on each try of item socketing. On failure, will prevent sockted item from being destroyed."
+soulcatcher_curseddoll_description: "Removes this doll from your inventory on each try of item socketing. On failure, will prevent socketed item from being destroyed."
 soulcatcher_curseddoll_destroyed: "<color=#00FFFF>Socketing failed, but <color=#00FF00>Cursed Doll</color> prevented item destruction</color>"
 item_soulcatcher_lantern: "Soulcatcher Lantern"
 item_soulcatcher_lantern_description: "Allows you to collect souls of defeated enemies"
